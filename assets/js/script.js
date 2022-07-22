@@ -10,6 +10,11 @@ $('document').ready(function(){
     $('.menu-bar i').click(function(){
         $(".profile-area").toggleClass('active');
     }) 
+	
+    // change-theme-backgroundColor
+    $('.theme-setting i').click(function(){
+        $("body").toggleClass("theme-background");
+    }) 
     // all-Selection
     // wow.js
     new WOW().init();
