@@ -1011,7 +1011,9 @@ i{
 	-webkit-animation: round-icon 1s linear infinite;
 	        animation: round-icon 1s linear infinite;
 }
-
+.theme-background{
+	background:#111418;
+}
 @-webkit-keyframes round-icon {
 	0%{
 		-webkit-transform: rotate(0deg);
