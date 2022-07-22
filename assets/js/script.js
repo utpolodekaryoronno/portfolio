@@ -137,13 +137,13 @@ $('document').ready(function(){
 
 // Scroll-bar
 
-window.addEventListener('load',(event) =>{
-    var Scrollbar = window.Scrollbar;
-    Scrollbar.init(document.querySelector('#min-content'), {
-      damping:0.03,
-      thumbMinSize:0.03,
-    });
-});
+// window.addEventListener('load',(event) =>{
+//     var Scrollbar = window.Scrollbar;
+//     Scrollbar.init(document.querySelector('#min-content'), {
+//       damping:0.03,
+//       thumbMinSize:0.03,
+//     });
+// });
   
 
 
