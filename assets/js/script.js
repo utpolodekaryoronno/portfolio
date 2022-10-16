@@ -10,11 +10,12 @@ $('document').ready(function(){
     $('.menu-bar i').click(function(){
         $(".profile-area").toggleClass('active');
     }) 
-	
+
     // change-theme-backgroundColor
     $('.theme-setting i').click(function(){
         $("body").toggleClass("theme-background");
     }) 
+    
     // all-Selection
     // wow.js
     new WOW().init();
@@ -74,7 +75,7 @@ $('document').ready(function(){
     });
 
     $('.bootstrap').rProgressbar({
-        percentage: 70,
+        percentage: 85,
         fillBackgroundColor: '#006600',
         backgroundColor: '#EEEEEE',
         borderRadius: '0px',
@@ -100,9 +101,27 @@ $('document').ready(function(){
         width: '100%'
     });
 
-    $('.devlopment').rProgressbar({
-        percentage: 20,
-        fillBackgroundColor: '#666699',
+    $('.php').rProgressbar({
+        percentage: 60,
+        fillBackgroundColor: '#2c4761',
+        backgroundColor: '#EEEEEE',
+        borderRadius: '0px',
+        height: '10px',
+        width: '100%'
+    });
+
+    $('.mysql').rProgressbar({
+        percentage: 70,
+        fillBackgroundColor: '#352446',
+        backgroundColor: '#EEEEEE',
+        borderRadius: '0px',
+        height: '10px',
+        width: '100%'
+    });
+
+    $('.wordpress').rProgressbar({
+        percentage: 80,
+        fillBackgroundColor: '#a88930',
         backgroundColor: '#EEEEEE',
         borderRadius: '0px',
         height: '10px',
