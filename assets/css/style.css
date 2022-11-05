@@ -322,7 +322,7 @@ i{
 .menu-bar i{
 	position: fixed;
 	top: 2rem;
-	right: 0;
+	right: 2rem;
 	font-size: 2.5rem;
 	border: 2px solid var(--border-color);
 	padding: .5rem 1rem;
