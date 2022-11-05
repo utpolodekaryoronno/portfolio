@@ -155,7 +155,7 @@ i{
 
 :root{
 	--primary-color:#FFF;
-	--button-color:#6610F2;
+	--button-color:#d1af04;
 	--border-color:#333333;
 	--body-color:#00010D;
 }
@@ -491,7 +491,7 @@ i{
 	line-height: 5rem;
 	border-radius: 50%;
 	background:  var(--button-color);
-	color: var(--primary-color);
+	color: var(--body-color);
 	font-size: 2.5rem;
 	cursor: pointer;
 	-webkit-transition: .5s;
@@ -502,9 +502,9 @@ i{
 	padding: 1.5rem 0;
 }
 .single-about:hover.single-about i{
-	background: var(--primary-color);
-	color:  var(--button-color);
+	transform: scale(1.2);
 }
+
 
   /***********************/
  /***Service-Area CSS ***/
