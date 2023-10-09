@@ -16,6 +16,8 @@
       <link rel="stylesheet" href="assets/css/animate.min.css">
       <!-- wow.js -->
       <link rel="stylesheet" href="assets/css/animate.css">
+      <!-- Aos.js -->
+      <link rel="stylesheet" href="assets/css/aos.css">
       <!-- progress-bar -->
       <link rel="stylesheet" href="assets/css/jquery.rprogessbar.min.css">
       <!-- style-css -->
@@ -43,14 +45,23 @@
                   <li><a class="scroll" href="#projects-section">Projects</a></li>
                   <li><a class="scroll" href="#direction-section">Direction</a></li>
                   <li><a class="scroll" href="#contact-section">Contact</a></li>
+                  <div class="profile-icon">
+                     <div class="single-icon">
+                        <a href="https://www.facebook.com/utpol.odikaryoronno"><i class="fa-brands fa-facebook-f"></i></a>
+                     </div>
+                     <div class="single-icon">
+                        <a href="https://twitter.com/UOdekary"><i class="fa-brands fa-twitter"></i></a>
+                     </div>
+                     <div class="single-icon">
+                        <a href="https://www.linkedin.com/in/utpol-odekary-7aa72323b/"><i class="fa-brands fa-linkedin-in"></i></a>
+                     </div>
+                     <div class="single-icon">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                     </div>
+                  </div>
                </ul>
+               
             </nav>
-            <div class="profile-icon">
-               <a href="https://www.facebook.com/utpol.odikaryoronno"><i class="fa-brands fa-facebook-f"></i></a>
-               <a href="https://twitter.com/UOdekary"><i class="fa-brands fa-twitter"></i></a>
-               <a href="https://www.linkedin.com/in/utpol-odekary-7aa72323b/"><i class="fa-brands fa-linkedin-in"></i></a>
-               <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            </div>
          </div>
          <!-- ************************************************************************************
                                              Profile-Area End
@@ -79,7 +90,7 @@
                   </div>
                   <p>I'm a professional front-end developer & WordPress expert. I have been working as a font-end developer over the last 3 years & Learning web developer (PHP) from (June 13, 2022- To be continuing). I am doing work on fiverr.com. if you need any help, you can contact me.</br></br>
 
-                 <b> Now I can create your website visibly and perfectly.</b> </p>
+                  <b> Now I can create your website visibly and perfectly.</b> </p>
                   <a target="_blanck" href="https://www.fiverr.com/utpol_odekary" class="btn">Hire Me</a>
                   <a target="_blanck" href="https://drive.google.com/file/d/1meuNyxW39phxHl1I-9czGHGYIHJn0kRX/view?usp=sharing" class="btn">Resume</a>
                   <div class="down-icon">
@@ -94,7 +105,7 @@
             <!-- ************************************************************************************
                                              About-area Start
             ************************************************************************************* -->
-            <div class="about-area wow animate__fadeInUpBig" data-wow-duration="0.7s" id="about-section">
+            <div class="about-area wow fadeInUp" data-wow-duration="1.5s" id="about-section">
                <div class="container">
                   <div class="about-content">
                      <div class="about-img">
@@ -156,12 +167,12 @@
             <!-- ************************************************************************************
                                              Service-area Start
             ************************************************************************************* -->
-            <div class="service-area section-padding wow animate__fadeInUpBig" data-wow-duration="0.7s" id="service-section" >
+            <div class="service-area section-padding wow fadeInUp" data-wow-duration="1.5s" id="service-section"  >
                <div class="section-title">
                   <h2>MY SERVICES</h2>
                </div>
                <div class="service">
-                  <div class="single-service">
+                  <div class="single-service wow fadeInUp" data-wow-duration="2s">
                      <div class="service-img">
                         <img src="assets/img/service/service1.jpg" alt="img">
                         <i class="fa-brands fa-html5"></i>
@@ -171,7 +182,7 @@
                         <p>Web design encompasses many different skills and disciplines in the production and maintenance of websites.</p>
                      </div>
                   </div>
-                  <div class="single-service">
+                  <div class="single-service wow fadeInUp"  data-wow-duration="4s">
                      <div class="service-img">
                         <img src="assets/img/service/service2.jpg" alt="img">
                         <i class="fa-brands fa-wordpress-simple"></i>
@@ -181,7 +192,7 @@
                         <p>WordPress is a free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.</p>
                      </div>
                   </div>
-                  <div class="single-service">
+                  <div class="single-service wow fadeInUp"  data-wow-duration="6s">
                      <div class="service-img">
                         <img src="assets/img/service/service4.jpg" alt="img">
                         <i class="fa-solid fa-person-rays"></i>
@@ -200,7 +211,7 @@
             <!-- ************************************************************************************
                                              Skills-area Start
             ************************************************************************************* -->
-            <div class="skills-area pb wow animate__fadeInUpBig" data-wow-duration="0.7s" id="skills-section">
+            <div class="skills-area pb wow fadeInUp" data-wow-duration="1.5s" id="skills-section">
                <div class="section-title">
                   <h2>SKILLS</h2>
                </div>
@@ -250,13 +261,13 @@
             <!-- ************************************************************************************
                                              Project-area Start
             ************************************************************************************* -->
-            <div class="project-area section-padding pt wow animate__fadeInUpBig" data-wow-duration="0.7s" id="projects-section">
+            <div class="project-area section-padding pt wow fadeInUp" data-wow-duration="1.5s" id="projects-section">
                <div class="section-title">
                   <h2>PROJECT</h2>
                </div>
                <div class="project-title">
                   <ul>
-                     <li data-filter="all" class="active-project">All</li>
+                     <li data-filter="all">All</li>
                      <li data-filter=".Business">Business</li>
                      <li data-filter=".Design">Design</li>
                      <li data-filter=".Brand">Brand</li>
@@ -317,7 +328,7 @@
                      <div class="project-img">
                         <img src="assets/img/project/project6.jpg" alt="img">
                         <div class="live-demo">
-                           <a target="_blank" href="nft#"><i class="fa-solid fa-eye"></i></a>
+                           <a target="_blank" href="https://utpolodekaryoronno.github.io/nft-print/"><i class="fa-solid fa-eye"></i></a>
                            <span>LIVE PREVIEW</span>
                         </div>
                      </div>
@@ -362,7 +373,7 @@
             <!-- ************************************************************************************
                                              Direction-area Start
             ************************************************************************************* -->
-            <div class="direction-area pt section-padding wow animate__fadeInUpBig" data-wow-duration="0.7s" id="direction-section">
+            <div class="direction-area pt section-padding wow fadeInUp" data-wow-duration="1.5s" id="direction-section">
                <div class="section-title">
                   <h2>WEB DIRECTION</h2>
                </div>
@@ -370,7 +381,7 @@
                   <div class="direction-content">
                      <h2>LET'S TALK ABOUT YOUR NEW PROJECT</h2>
                      <p>I am willing to provide you with various types of webdesign and webdevelopment services. If you want to build your website at low cost then definitely contact me.</p>
-                     <a href="#contact-section">GET IN TOUCH</a>
+                     <a class="btn" href="#contact-section">GET IN TOUCH</a>
                   </div>
                </div>
             </div>
@@ -381,41 +392,53 @@
             <!-- ************************************************************************************
                                              Contact-area Start
             ************************************************************************************* -->
-            <div class="contact-area section-padding pt wow animate__fadeInUpBig" data-wow-duration="0.7s" id="contact-section">
+            <div class="contact-area section-padding pt wow fadeInUp" data-wow-duration="1.5s" id="contact-section">
                <div class="section-title">
                   <h2>CONTACT</h2>
                </div>
                <div class="contact">
-                  <form action="#">
+                  <form onsubmit="sendEmail(); reset(); return fales;" id="FormValidation">
                      <label for="name">Name</label>
-                     <input type="text" id="name" placeholder="Type Your Name">
-                     <label for="mail">Email</label>
-                     <input type="email" id="mail" placeholder="Type Your Email">
+                     <input  name="name" type="text" id="name" placeholder="Type Your Name" required>
+                     <label for="email">Email</label>
+                     <input  name="email" type="email" id="email" placeholder="Type Your Email" required>
                      <label for="number">Number</label>
-                     <input type="number" id="number" placeholder="Type Your Number">
-                     <label for="massage">Number</label>
-                     <textarea name="massage" id="massage" placeholder="Type Your Massage"></textarea>
-                     <button type="submit">SUBMIT FORM</button>
+                     <input  name="number" type="text" id="number" placeholder="Type Your Number" required>
+                     <label for="message">Message</label>
+                     <textarea name="message" id="message" placeholder="Type Your Message" required></textarea>
+                     <div class="submit_value">
+                        <input type="submit" value="Send">
+                     </div>
+                    
+                     <!-- <button type="submit">SUBMIT FORM</button> -->
                   </form>
                </div>
             </div>
             <!-- ************************************************************************************
                                              Contact-area End
             ************************************************************************************* -->
-          
+         
             <!-- ************************************************************************************
                                              Footer-area Start
             ************************************************************************************* -->
-            <footer class="footer-area section-padding  wow animate__fadeInUpBig" data-wow-duration="0.7s">
+            <footer class="footer-area section-padding wow fadeInUp" data-wow-duration="1.5s">
                <div class="footer">
                   <div class="footer-content">
                      <h3>About Agency</h3>
                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the and typesetting industry. </p>
                      <div class="footer-social-link">
-                        <a href="https://www.facebook.com/utpol.odikaryoronno"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://twitter.com/UOdekary"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/in/utpol-odekary-7aa72323b/"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <div class="single-socail-link">
+                           <a href="https://www.facebook.com/utpol.odikaryoronno"><i class="fa-brands fa-facebook-f"></i></a>
+                        </div>
+                        <div class="single-socail-link">
+                           <a href="https://twitter.com/UOdekary"><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                        <div class="single-socail-link">
+                           <a href="https://www.linkedin.com/in/utpol-odekary-7aa72323b/"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                        <div class="single-socail-link">
+                           <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
                      </div>
                   </div>
                   <div class="footer-content">
@@ -430,13 +453,6 @@
                         </li>
                         <li>
                            <a href="#"><img src="assets/img/footer/port8.jpg" alt="img"></a>
-                           <div class="media-body">
-                              <a href="#">Design is not just what looks..</a>
-                              <span>20 April 2020 | by <a href="#">Utpol Odekary</a></span>
-                           </div>
-                        </li>
-                        <li>
-                           <a href="#"><img src="assets/img/footer/port9.jpg" alt="img"></a>
                            <div class="media-body">
                               <a href="#">Design is not just what looks..</a>
                               <span>20 April 2020 | by <a href="#">Utpol Odekary</a></span>
@@ -461,9 +477,27 @@
             ************************************************************************************* -->
 
             <!-- theme-setting -->
-            <div class="theme-setting">
-               <i class="fa-solid fa-gear"></i>
+            <div class="theme-setting-wrapper">
+               <div class="theme-setting">
+                  <i class="fa-solid fa-gear"></i>
+               </div>
+               <div class="theme-option-div">
+                  <div class="choice-skin">
+                     <h5>
+                        Choice Skin Color
+                     </h5>
+                  </div>
+                  <div class="skin-color">
+                     <span class="skin-button" data-color="#F7621B" id="skin-color-1"></span>
+                     <span class="skin-button" data-color="#769d07" id="skin-color-2"></span>
+                     <span class="skin-button" data-color="#BA1F61" id="skin-color-3"></span>
+                     <span class="active skin-button" data-color="#d7a90f" id="skin-color-4"></span>
+                     <span class="skin-button" data-color="#0FDCAB" id="skin-color-5"></span>
+                     <span class="skin-button" data-color="#17B662" id="skin-color-6"></span>
+                  </div>
+               </div>
             </div>
+            
             <!-- preloader -->
             <div class="preloader">
                <img src="assets/img/gggg.gif" alt="loader">
@@ -479,12 +513,16 @@
       </section>
       <!-- jquery.min.js -->
       <script src="assets/js/jquery.min.js"></script>
+      <!-- Jquery Validation -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
       <!-- scroll spy -->
       <script src="assets/js/onepageNav.js"></script>
       <!-- owl-carousel -->
       <script src="assets/js/owl.carousel.min.js"></script>
       <!-- Wow.js -->
       <script src="assets/js/wow.min.js"></script>
+      <!-- Aos.js -->
+      <!-- <script src="assets/js/aos.js"></script> -->
       <!-- typing.js -->
       <script src="assets/js/jquery.animateTyping.js"></script>
       <!-- progress-bar -->		
@@ -492,9 +530,11 @@
       <script src="assets/js/jQuery.rProgressbar.min.js"></script>
       <!-- mix-it-up.js -->
       <script src="assets/js/mixitup.min.js"></script>
-       <!-- Smooth Scroll.js -->
-       <!-- <script src="assets/js/smooth-scrollbar.js"></script> -->
-      <!-- script-js -->
+      <!-- Smooth Scroll.js -->
+      <!-- <script src="assets/js/smooth-scrollbar.js"></script> -->
+      <!-- Smtp-js -->
+      <script src="https://smtpjs.com/v3/smtp.js"></script>
+       <!-- script-js -->
       <script src="assets/js/script.js"></script>
    </body>
 </html>
