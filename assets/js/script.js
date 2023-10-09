@@ -1,6 +1,4 @@
 
-
-
 $(window).on('load',function(){
     $('.preloader').delay(1000).fadeOut(500);
 })
@@ -13,8 +11,13 @@ $('document').ready(function(){
 
     // change-theme-backgroundColor
     $('.theme-setting i').click(function(){
-        $("body").toggleClass("theme-background");
+        $(".theme-option-div").toggleClass("active");
     }) 
+    $('.theme-setting i').click(function () {
+        $(".theme-setting-wrapper").toggleClass("active");
+    });
+    
+
     
     // all-Selection
     // wow.js
@@ -24,7 +27,7 @@ $('document').ready(function(){
     // scroll spy.js
     $('.scroll').onePgaeNav({
         wrapper: '#onepage-nav'
-      });
+    });
     
     // about-area
     // owlCarousel
@@ -61,7 +64,7 @@ $('document').ready(function(){
         fillBackgroundColor: '#333300',
         backgroundColor: '#EEEEEE',
         borderRadius: '0px',
-        height: '10px',
+        height: '7px',
         width: '100%'
     });
 
@@ -70,7 +73,7 @@ $('document').ready(function(){
         fillBackgroundColor: '#663300',
         backgroundColor: '#EEEEEE',
         borderRadius: '0px',
-        height: '10px',
+        height: '7px',
         width: '100%'
     });
 
@@ -79,7 +82,7 @@ $('document').ready(function(){
         fillBackgroundColor: '#006600',
         backgroundColor: '#EEEEEE',
         borderRadius: '0px',
-        height: '10px',
+        height: '7px',
         width: '100%'
     });
 
@@ -88,7 +91,7 @@ $('document').ready(function(){
         fillBackgroundColor: '#669999',
         backgroundColor: '#EEEEEE',
         borderRadius: '0px',
-        height: '10px',
+        height: '7px',
         width: '100%'
     });
 
@@ -97,7 +100,7 @@ $('document').ready(function(){
         fillBackgroundColor: '#0099ff',
         backgroundColor: '#EEEEEE',
         borderRadius: '0px',
-        height: '10px',
+        height: '7px',
         width: '100%'
     });
 
@@ -106,7 +109,7 @@ $('document').ready(function(){
         fillBackgroundColor: '#2c4761',
         backgroundColor: '#EEEEEE',
         borderRadius: '0px',
-        height: '10px',
+        height: '7px',
         width: '100%'
     });
 
@@ -115,7 +118,7 @@ $('document').ready(function(){
         fillBackgroundColor: '#352446',
         backgroundColor: '#EEEEEE',
         borderRadius: '0px',
-        height: '10px',
+        height: '7px',
         width: '100%'
     });
 
@@ -124,7 +127,7 @@ $('document').ready(function(){
         fillBackgroundColor: '#a88930',
         backgroundColor: '#EEEEEE',
         borderRadius: '0px',
-        height: '10px',
+        height: '7px',
         width: '100%'
     });
 
@@ -156,7 +159,94 @@ $('document').ready(function(){
         return false;
     });
 
+
+
+     // Aos Js
+    //  AOS.init();
+    
+
+
+
+    // Skin Color Change
+    $('.skin-color span').click(function(e) {
+        $('.skin-color span').removeClass('active');
+        var $this = $(this);
+        if (!$this.hasClass('active')) {
+            $this.addClass('active');
+        }
+    });
+
+
+    // Form Validation
+    $("#FormValidation").validate({
+       rules: {
+            // name is id
+            name:{
+                minlength: 2
+            },
+            // email is id
+            email:{
+                // email is type
+                email:true,
+            },
+             // number is id
+            number:{
+                // number is type
+                number:true,
+                minlength:10,
+                maxlength:14,
+            },
+        },
+        messages:{
+            name:{
+                required: "Please enter your Name",
+                minlength: "Name at least 3 characters"
+            },
+            email: "Please enter your Valid Email",
+            number: "Please enter your Number",
+            message: "Please enter your Message",
+        },
+     
+        submitHandler: function(form) {
+          form.submit();
+        }
+    });
+
 });
+
+// Send  Email
+
+
+// function sendEmail(){
+//     Email.send({
+//         Host : "smtp.gmail.com",
+//         Username : "info.utpolodekary@gmail.com",
+//         Password : "utpol266",
+//         To : 'info.utpolodekary@gmail.com',
+//         From : document.getElementById("email").value,
+//         Subject : "This is the subject",
+//         Body : "And this is the body"
+//     }).then(
+//       message => alert(message)
+//     );
+// }
+
+
+
+
+
+// Skin Color 
+let skinButtons = document.querySelectorAll('.skin-button');
+skinButtons.forEach(color =>{
+  color.addEventListener('click', () =>{
+    let dataColor = color.getAttribute('data-color');
+    document.querySelector(':root').style.setProperty('--button-color', dataColor);
+  });
+})
+
+// 
+
+
 
 
 // Scroll-bar
