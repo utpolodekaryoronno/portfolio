@@ -36,6 +36,9 @@
     }
 }
 @media all and (max-width:767px){
+    .banner-content {
+        padding-top: 10rem;
+    }
     .service{
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 3rem;
@@ -76,7 +79,6 @@
     h1{
         font-size: 4rem;
     }
-
     .service{
         grid-template-columns: repeat(1, 1fr);
     }
@@ -108,4 +110,9 @@
         grid-column: span 1;
         max-width: 100%;
     }    
+}
+@media all and (max-width:450px){
+    .profile-menu ul li {
+        padding-top: 1rem;
+    }
 }
