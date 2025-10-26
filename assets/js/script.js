@@ -1,263 +1,480 @@
-
-$(window).on('load',function(){
-    $('.preloader').delay(1000).fadeOut(500);
-})
-
-$('document').ready(function(){
-
-    $('.menu-bar i').click(function(){
-        $(".profile-area").toggleClass('active');
-    }) 
-
-    // change-theme-backgroundColor
-    $('.theme-setting i').click(function(){
-        $(".theme-option-div").toggleClass("active");
-    }) 
-    $('.theme-setting i').click(function () {
-        $(".theme-setting-wrapper").toggleClass("active");
+$(document).ready(function(){
+  // Mobile Menu Icon
+   
+    $('#nav-icon').click(function () {
+        $(this).toggleClass('open');
+        $('.side-bar').toggleClass('active');
+        $('.min-content').toggleClass('overlay');
     });
-    
 
-    
-    // all-Selection
-    // wow.js
-    new WOW().init();
-
-    // menubar-active
-    // scroll spy.js
-    $('.scroll').onePgaeNav({
-        wrapper: '#onepage-nav'
-    });
-    
-    // about-area
-    // owlCarousel
-    $(".about-me").owlCarousel({
-        responsive: true,
-        loop:true,
-        dots:true,
-        autoplay:true,
-        margin: 20,
-        slideSpeed : 200,
-        items : 4,
-        responsive:{
-            320:{
-                items:1,
-            },
-            450:{
-                items:2,
-            },
-            767:{
-                items:3,
-            },
-            1200:{
-                items:4,
-            }
+    // Outside click handler
+    $(document).click(function (event) {
+        // Check if the click was outside the side-bar and nav-icon
+        if (
+            !$(event.target).closest('.side-bar, #nav-icon').length &&
+            $('.side-bar').hasClass('active')
+        ) {
+            $('#nav-icon').removeClass('open');
+            $('.side-bar').removeClass('active');
+            $('.min-content').removeClass('overlay');
         }
     });
+  
 
-    // // skills-area
-    // // progess-bar
-    
-    
-    $('.html').rProgressbar({
-        percentage: 95,
-        fillBackgroundColor: '#333300',
-        backgroundColor: '#EEEEEE',
-        borderRadius: '0px',
-        height: '7px',
-        width: '100%'
-    });
+  
 
-    $('.css').rProgressbar({
-        percentage: 90,
-        fillBackgroundColor: '#663300',
-        backgroundColor: '#EEEEEE',
-        borderRadius: '0px',
-        height: '7px',
-        width: '100%'
-    });
-
-    $('.bootstrap').rProgressbar({
-        percentage: 85,
-        fillBackgroundColor: '#006600',
-        backgroundColor: '#EEEEEE',
-        borderRadius: '0px',
-        height: '7px',
-        width: '100%'
-    });
-
-    $('.jquery').rProgressbar({
-        percentage: 60,
-        fillBackgroundColor: '#669999',
-        backgroundColor: '#EEEEEE',
-        borderRadius: '0px',
-        height: '7px',
-        width: '100%'
-    });
-
-    $('.javascript').rProgressbar({
-        percentage: 30,
-        fillBackgroundColor: '#0099ff',
-        backgroundColor: '#EEEEEE',
-        borderRadius: '0px',
-        height: '7px',
-        width: '100%'
-    });
-
-    $('.php').rProgressbar({
-        percentage: 60,
-        fillBackgroundColor: '#2c4761',
-        backgroundColor: '#EEEEEE',
-        borderRadius: '0px',
-        height: '7px',
-        width: '100%'
-    });
-
-    $('.mysql').rProgressbar({
-        percentage: 70,
-        fillBackgroundColor: '#352446',
-        backgroundColor: '#EEEEEE',
-        borderRadius: '0px',
-        height: '7px',
-        width: '100%'
-    });
-
-    $('.wordpress').rProgressbar({
-        percentage: 80,
-        fillBackgroundColor: '#a88930',
-        backgroundColor: '#EEEEEE',
-        borderRadius: '0px',
-        height: '7px',
-        width: '100%'
-    });
-
-    // mixitup plugin
-    var containerEl = document.querySelector('.projects'); 
-    var mixer = mixitup(containerEl, {
-        load: {
-            filter: 'all'
-        },
-        animation: {
-            effectsIn: 'fade translateY(-100%)',
-            effects: 'fade translateZ(-100px)'
-        }
+    // Add Class Menu
+    $('.header-nav nav ul li a').click(function(){
+      $('.header-nav nav ul li a').removeClass('active');
+      $(this).addClass('active');
     });
 
 
-    // scroll-ber
-    $(window).scroll(function(){
-		if($(this).scrollTop()>200){
-			$('.scroll-div i').show();
-		}
-		else{
-			$('.scroll-div i').hide();
-		}
-	});
+      /*--------------------------------------------------------
+    / 16. Sticky Header
+    /---------------------------------------------------------*/
+    if($(".isSticky").length > 0){
+      var header_height = $(".isSticky").height();
+      $(window).on('scroll', function(){
+          if($(window).scrollTop() > 100){
+              $(".isSticky").addClass('fixedHeader animated slideInDown');
+          }else{
+              $(".isSticky").removeClass('fixedHeader animated slideInDown');
+          }
+      });
+    }
 
-    $('.scroll-div i').click(function(){
-        $('html,body').animate({scrollTop:0}, 2000);
-        return false;
-    });
+  /*--------------------------------------------------------
+    /   03. Back To Top
+    /--------------------------------------------------------*/
+    function backtotop() {
+      $(window).scroll(function(){
+          if ($(this).scrollTop() > 50) {
+              $('#backtotop').addClass('activate');
+          } else {
+              $('#backtotop').removeClass('activate');
+          }
+      });
+      $('#backtotop, #backtotop02').on('click', function () {
+          $("html, body").animate({scrollTop: 0}, 600);
+          return false;
+      });
+    }
+    backtotop();
 
 
 
-     // Aos Js
-    //  AOS.init();
-    
-
-
-
-    // Skin Color Change
-    $('.skin-color span').click(function(e) {
-        $('.skin-color span').removeClass('active');
-        var $this = $(this);
-        if (!$this.hasClass('active')) {
-            $this.addClass('active');
-        }
-    });
-
-
-    // Form Validation
-    $("#FormValidation").validate({
-       rules: {
-            // name is id
-            name:{
-                minlength: 2
-            },
-            // email is id
-            email:{
-                // email is type
-                email:true,
-            },
-             // number is id
-            number:{
-                // number is type
-                number:true,
-                minlength:10,
-                maxlength:14,
-            },
-        },
-        messages:{
-            name:{
-                required: "Please enter your Name",
-                minlength: "Name at least 3 characters"
-            },
-            email: "Please enter your Valid Email",
-            number: "Please enter your Number",
-            message: "Please enter your Message",
-        },
-     
-        submitHandler: function(form) {
-          form.submit();
-        }
-    });
+     // aos Plugin
+  AOS.init();
 
 });
 
-// Send  Email
-
-
-// function sendEmail(){
-//     Email.send({
-//         Host : "smtp.gmail.com",
-//         Username : "info.utpolodekary@gmail.com",
-//         Password : "utpol266",
-//         To : 'info.utpolodekary@gmail.com',
-//         From : document.getElementById("email").value,
-//         Subject : "This is the subject",
-//         Body : "And this is the body"
-//     }).then(
-//       message => alert(message)
-//     );
-// }
 
 
 
 
-
-// Skin Color 
-let skinButtons = document.querySelectorAll('.skin-button');
-skinButtons.forEach(color =>{
-  color.addEventListener('click', () =>{
-    let dataColor = color.getAttribute('data-color');
-    document.querySelector(':root').style.setProperty('--button-color', dataColor);
-  });
+// Window load 
+$(window).on('load',function(){
+  $('.preloader').delay(500).fadeOut(400);
 })
 
-// 
+$(document).ready(function(){
+  // progress-bar
+  var bar = new ProgressBar.Circle('.progress-outhers', {
+    strokeWidth: 5,
+    easing: 'easeInOut',
+    duration: 5000,
+    color: '#FFC107',
+    trailColor: '#191923',
+    trailWidth: 10,
+    easing: 'easeOut',
+    svgStyle: {width: '100%', height: '100%'},
+    text: {
+      value: '0',
+      style: {
+        color: '#8c8c8e',
+        position:'absolute',
+        top:'50%',
+        left:'50%',
+        transform:'translate(-50%,-50%)',
+        fontSize:'12px'
+      },
+    },
+    step: (state, bar) => {
+      bar.setText(Math.round(bar.value() * 100) + ' %');
+    }
+  });
+  bar.animate(.30); 
+
+  var bar = new ProgressBar.Circle('.progress-english', {
+    strokeWidth: 5,
+    easing: 'easeInOut',
+    duration: 5000,
+    color: '#FFC107',
+    trailColor: '#191923',
+    trailWidth: 10,
+    easing: 'easeOut',
+    svgStyle: {width: '100%', height: '100%'},
+    text: {
+      value: '0',
+      style: {
+        color: '#8c8c8e',
+        position:'absolute',
+        top:'50%',
+        left:'50%',
+        transform:'translate(-50%,-50%)',
+        fontSize:'12px'
+      },
+    },
+    step: (state, bar) => {
+      bar.setText(Math.round(bar.value() * 100) + ' %');
+    }
+  });
+  bar.animate(.70); 
+
+  var bar = new ProgressBar.Circle('.progress-bangla', {
+    strokeWidth: 5,
+    easing: 'easeInOut',
+    duration: 5000,
+    color: '#FFC107',
+    trailColor: '#191923',
+    trailWidth: 10,
+    easing: 'easeOut',
+    svgStyle: {width: '100%', height: '100%'},
+    text: {
+      value: '0',
+      style: {
+        color: '#8c8c8e',
+        position:'absolute',
+        top:'50%',
+        left:'50%',
+        transform:'translate(-50%,-50%)',
+        fontSize:'12px'
+      },
+    },
+    step: (state, bar) => {
+      bar.setText(Math.round(bar.value() * 100) + ' %');
+    }
+  });
+  bar.animate(.95); 
+
+  // Skill-bar
+  // html
+  var bar = new ProgressBar.Line('.html', {
+    strokeWidth: 2,
+    easing: 'easeInOut',
+    duration: 5000,
+    color: '#FFC107',
+    trailColor: '#191923',
+    trailWidth: 3,
+    easing: 'easeOut',
+    svgStyle: {width: '100%', height: '100%'},
+    text: {
+      value: '0',
+      style: {
+        color: '#8c8c8e',
+        position:'absolute',
+        bottom:'20px',
+        right:'0',
+        fontSize:'12px'
+      },
+    },
+    step: (state, bar) => {
+      bar.setText(Math.round(bar.value() * 100) + ' %');
+    }
+  });
+  bar.animate(.90); 
+
+  // css
+  var bar = new ProgressBar.Line('.css', {
+    strokeWidth: 2,
+    easing: 'easeInOut',
+    duration: 5000,
+    color: '#FFC107',
+    trailColor: '#191923',
+    trailWidth: 3,
+    easing: 'easeOut',
+    svgStyle: {width: '100%', height: '100%'},
+    text: {
+      value: '0',
+      style: {
+        color: '#8c8c8e',
+        position:'absolute',
+        bottom:'20px',
+        right:'0',
+        fontSize:'12px'
+      },
+    },
+    step: (state, bar) => {
+      bar.setText(Math.round(bar.value() * 100) + ' %');
+    }
+  });
+  bar.animate(.95); 
+
+  // Bootstrap
+  var bar = new ProgressBar.Line('.bootstrap', {
+    strokeWidth: 2,
+    easing: 'easeInOut',
+    duration: 5000,
+    color: '#FFC107',
+    trailColor: '#191923',
+    trailWidth: 3,
+    easing: 'easeOut',
+    svgStyle: {width: '100%', height: '100%'},
+    text: {
+      value: '0',
+      style: {
+        color: '#8c8c8e',
+        position:'absolute',
+        bottom:'20px',
+        right:'0',
+        fontSize:'12px'
+      },
+    },
+    step: (state, bar) => {
+      bar.setText(Math.round(bar.value() * 100) + ' %');
+    }
+  });
+  bar.animate(.85); 
 
 
+  // javascript
+  var bar = new ProgressBar.Line('.javascript', {
+    strokeWidth: 2,
+    easing: 'easeInOut',
+    duration: 5000,
+    color: '#FFC107',
+    trailColor: '#191923',
+    trailWidth: 3,
+    easing: 'easeOut',
+    svgStyle: {width: '100%', height: '100%'},
+    text: {
+      value: '0',
+      style: {
+        color: '#8c8c8e',
+        position:'absolute',
+        bottom:'20px',
+        right:'0',
+        fontSize:'12px'
+      },
+    },
+    step: (state, bar) => {
+      bar.setText(Math.round(bar.value() * 100) + ' %');
+    }
+  });
+  bar.animate(.50); 
+
+  // jquery
+  var bar = new ProgressBar.Line('.jquery', {
+    strokeWidth: 2,
+    easing: 'easeInOut',
+    duration: 5000,
+    color: '#FFC107',
+    trailColor: '#191923',
+    trailWidth: 3,
+    easing: 'easeOut',
+    svgStyle: {width: '100%', height: '100%'},
+    text: {
+      value: '0',
+      style: {
+        color: '#8c8c8e',
+        position:'absolute',
+        bottom:'20px',
+        right:'0',
+        fontSize:'12px'
+      },
+    },
+    step: (state, bar) => {
+      bar.setText(Math.round(bar.value() * 100) + ' %');
+    }
+  });
+  bar.animate(.75); 
+
+  // php
+  var bar = new ProgressBar.Line('.php', {
+    strokeWidth: 2,
+    easing: 'easeInOut',
+    duration: 5000,
+    color: '#FFC107',
+    trailColor: '#191923',
+    trailWidth: 3,
+    easing: 'easeOut',
+    svgStyle: {width: '100%', height: '100%'},
+    text: {
+      value: '0',
+      style: {
+        color: '#8c8c8e',
+        position:'absolute',
+        bottom:'20px',
+        right:'0',
+        fontSize:'12px'
+      },
+    },
+    step: (state, bar) => {
+      bar.setText(Math.round(bar.value() * 100) + ' %');
+    }
+  });
+  bar.animate(.60); 
+
+  // wordpress
+  var bar = new ProgressBar.Line('.laravel', {
+    strokeWidth: 2,
+    easing: 'easeInOut',
+    duration: 5000,
+    color: '#FFC107',
+    trailColor: '#191923',
+    trailWidth: 3,
+    easing: 'easeOut',
+    svgStyle: {width: '100%', height: '100%'},
+    text: {
+      value: '0',
+      style: {
+        color: '#8c8c8e',
+        position:'absolute',
+        bottom:'20px',
+        right:'0',
+        fontSize:'12px'
+      },
+    },
+    step: (state, bar) => {
+      bar.setText(Math.round(bar.value() * 100) + ' %');
+    }
+  });
+  bar.animate(.65); 
+
+  // Mysql
+  var bar = new ProgressBar.Line('.mysql', {
+    strokeWidth: 2,
+    easing: 'easeInOut',
+    duration: 5000,
+    color: '#FFC107',
+    trailColor: '#191923',
+    trailWidth: 3,
+    easing: 'easeOut',
+    svgStyle: {width: '100%', height: '100%'},
+    text: {
+      value: '0',
+      style: {
+        color: '#8c8c8e',
+        position:'absolute',
+        bottom:'20px',
+        right:'0',
+        fontSize:'12px'
+      },
+    },
+    step: (state, bar) => {
+      bar.setText(Math.round(bar.value() * 100) + ' %');
+    }
+  });
+  bar.animate(.70); 
+
+  // member swiper Carousel
+  var swiper = new Swiper(".swiper-members", {
+    loop:true,
+    animateIn:'fadeIn',
+    animateOut:'fadeOut',
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 5,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
+    pagination: {
+      el: ".teamMember-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      450: {
+        slidesPerView: 1,
+      }
+    }
+  });
+
+  // My all-work
+ 
+
+});
+
+
+// Typing js
+var typed = new Typed('#typed', {
+  strings: ['Business Website.', 'NFT Website.','Ecommerce Website','Newspaper Website'],
+  smartBackspace: true,
+  loop:true,
+  fadeOutDelay: 500,
+  backDelay: 700,
+  startDelay: 100,
+  typeSpeed: 100,
+  backSpeed: 100,
+  fadeOutDelay: 500,
+});
+
+// mixitup gallery
+mixitup("#mix-wrapper",{
+  animation: {
+    effectsIn: "fade translateY(-100%)",
+    effects: "fade translateZ(-100px)",
+    duration: 1000,
+  }
+});
+
+
+// Fancybox
+Fancybox.bind('[data-fancybox="gallery"]', {
+  Thumbs: {
+    Carousel: {
+      fill: false,
+      center: true,
+    },
+  },
+});
 
 
 // Scroll-bar
+window.addEventListener('load',(event) =>{
+  var Scrollbar = window.Scrollbar;
+  Scrollbar.init(document.querySelector('.min-content'), {
+    damping:0.05,
+    thumbMinSize:0.05,
+    renderByPixels:false,
+    alwaysShowTracks:true,
+    continuousScrolling:false,
+  });
+});
+window.addEventListener('load',(event) =>{
+  var Scrollbar = window.Scrollbar;
+  Scrollbar.init(document.querySelector('.skill-bar'), {
+    damping:0.05,
+    thumbMinSize:0.05,
+    renderByPixels:false,
+    alwaysShowTracks:true,
+    continuousScrolling:false,
+  });
+});
 
-// window.addEventListener('load',(event) =>{
-//     var Scrollbar = window.Scrollbar;
-//     Scrollbar.init(document.querySelector('#min-content'), {
-//       damping:0.03,
-//       thumbMinSize:0.03,
-//     });
-// });
-  
+// scrollbar animate
+Scrollbar.use(OverscrollPlugin);
+Scrollbar.init(document.querySelector('.skill-bar'), {
+  damping: 0.05,
+  renderByPixel: true,
+  continuousScrolling: true,
+});
+Scrollbar.init(document.querySelector('.content-banner'), {
+  damping: 0.05,
+  renderByPixel: true,
+  continuousScrolling: true,
+});
+
+
+
+
+
+
+
 
 
